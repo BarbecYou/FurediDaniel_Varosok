@@ -1,9 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InsertActivity">
+    tools:context=".InsertActivity"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/varosNevInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Város neve"
+        android:inputType="text"
+        android:textSize="25sp"/>
+    <EditText
+        android:id="@+id/orszagInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ország"
+        android:inputType="text"
+        android:textSize="25sp"/>
+    <EditText
+        android:id="@+id/lakossagInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Lakosság"
+        android:inputType="number"
+        android:textSize="25sp"/>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="20dp">
+        <Button
+            android:id="@+id/visszaButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vissza"
+            android:layout_marginRight="20dp"/>
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Felvétel"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</LinearLayout>

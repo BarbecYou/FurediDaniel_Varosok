@@ -3,14 +3,18 @@ package hu.home.varosok;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
+
+import java.io.IOException;
 
 import hu.home.varosok.databinding.ActivityListBinding;
 
 public class ListActivity extends AppCompatActivity {
 
-    ActivityListBinding binding;
+    public static ActivityListBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +22,10 @@ public class ListActivity extends AppCompatActivity {
         binding = ActivityListBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        RequestTask task = new RequestTask(MainActivity.BASE_URL);
+        task.execute();
+
+        binding.listDataTextView.setMovementMethod(new ScrollingMovementMethod());
         binding.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -26,6 +34,6 @@ public class ListActivity extends AppCompatActivity {
             }
         });
 
-        binding.setText("lmaoooo");
+
     }
 }

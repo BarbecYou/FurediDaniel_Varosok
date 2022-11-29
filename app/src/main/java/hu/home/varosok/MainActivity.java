@@ -3,14 +3,17 @@ package hu.home.varosok;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+
+import java.io.IOException;
 
 import hu.home.varosok.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
-    public final String BASE_URL = "https://retoolapi.dev/hrHkfB/varosok";
+    public static final String BASE_URL = "https://retoolapi.dev/hrHkfB/varosok";
     ActivityMainBinding binding;
 
     @Override
@@ -34,5 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
     }
 }
