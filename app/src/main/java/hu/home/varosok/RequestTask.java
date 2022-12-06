@@ -55,6 +55,7 @@ public class RequestTask extends AsyncTask<Void, Void, Response> {
     @Override
     protected void onPostExecute(Response response) {
         String data = response.getContent();
+
         switch (requestMethod){
             case "GET":
                 ListActivity.binding.listDataTextView.setText(data);

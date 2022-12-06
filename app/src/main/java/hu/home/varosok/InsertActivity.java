@@ -47,6 +47,7 @@ public class InsertActivity extends AppCompatActivity {
                         varosNev, orszag, lakossag);
                 RequestTask task = new RequestTask(MainActivity.BASE_URL, "POST", json);
                 task.execute();
+
             }
         });
     }
