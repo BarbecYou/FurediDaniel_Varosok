@@ -50,4 +50,9 @@ public class City {
     public void setPopulation(int population) {
         this.population = population;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s, %s (%d)", this.getName(), this.getCountry(), this.getPopulation());
+    }
 }

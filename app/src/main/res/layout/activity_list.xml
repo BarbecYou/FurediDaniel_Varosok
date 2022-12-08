@@ -7,14 +7,13 @@
     android:orientation="vertical"
     tools:context=".ListActivity">
 
-    <TextView
-        android:id="@+id/listDataTextView"
+
+    <ListView
+        android:id="@+id/citiesListView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="lmao"
-        android:textSize="25sp"
-        android:scrollbars="vertical"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/city_list_item" />
 
     <Button
         android:id="@+id/button"

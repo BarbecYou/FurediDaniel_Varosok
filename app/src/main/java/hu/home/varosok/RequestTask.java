@@ -2,7 +2,12 @@ package hu.home.varosok;
 
 import android.os.AsyncTask;
 
+import com.google.gson.Gson;
+
+import hu.home.varosok.ListActivity;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 import hu.home.varosok.databinding.ActivityListBinding;
 
@@ -58,7 +63,10 @@ public class RequestTask extends AsyncTask<Void, Void, Response> {
 
         switch (requestMethod){
             case "GET":
-                ListActivity.binding.listDataTextView.setText(data);
+                String content = response.getContent();
+                Gson converter = new Gson();
+                List<City> cities = Arrays.asList(converter.fromJson(content, City[].class));
+                // ListActivity.CityAdapter adapter = new ListActivity.CityAdapter(cities);
                 break;
             case "POST":
 
